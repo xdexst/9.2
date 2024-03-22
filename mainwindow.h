@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QLabel>
 #include <QTimer>
+#include <QElapsedTimer>
 
 class MainWindow : public QMainWindow
 {
@@ -14,10 +15,13 @@ public:
 
 private slots:
     void updateTimer();
+    void updateTimeDisplay(qint64 elapsed);
 
 private:
     QLabel *label;
     QTimer *timer;
-    int seconds;
+    QElapsedTimer elapsedTimer;
+    qint64 elapsedTime;
 };
+
 #endif // MAINWINDOW_H
